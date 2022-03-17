@@ -11,33 +11,25 @@
 </head>
 <body>
     <h1>Sravani Jakkula reaction timer</h1>
-
     <button type="button" class="btn btn-primary" onclick="startTime()"> Start Timer </button>
     <button type="button" class="btn btn-secondary" onclick="recordReact()">React Now</button><br>
-    
     <p id="target">Your time </p>
     <p id="countdown">Count</p>
-  
-    <script> 
+  <script> 
         var myTime = undefined
-        function recordReact()
-         {
+        function recordReact() {
            myTime=Date.now();
            console.log("Current time in milliseconds is "+ myTime)
-        
         }
-      
-        function startTime()
-        {
-            for(let i=0;i<4;i++)
+        var a= Math.floor(Math.random() * 9)+2;
+        function startTime(){
+            for(let i=0;i<c;i++)
             {
               setTimeout(()=>{
             document.getElementById('countdown').innerHTML = i
-          }, (3-i)*1000)
+          }, (c-i)*1000)
             }
-      
             setTimeout(()=>{
-      
            if(myTime==undefined)
            {
                document.getElementById('target').innerHTML="Too Slow"
@@ -49,8 +41,7 @@
            }
           }, 3000)
         }
-      
-        </script>
+      </script>
 
 </body>
 </html>

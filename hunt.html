@@ -66,12 +66,13 @@
    
 </div>
 </div>
+<button type="button" class="btn btn-success" onclick="reset()" >Reset</button>
+
 </body>
 <script>
-
   var ids=["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y"]
   var shakeCount=0;
-  var birdlLocation=18;
+  var birdlLocation=Math.floor(Math.random() * 25);
   function check(position)
     {
       id=ids[position]
@@ -85,6 +86,12 @@
          document.getElementById("shakes").innerHTML = "Number of shakes is " + shakeCount;
        document.getElementById("score").innerHTML="The score is "+ locationScore(position, birdlLocation); 
     }
+    function reset(){
+         shakeCount=0;
+         document.getElementById("shakes").innerHTML="Number of shakes is "+ shakeCount;
+         birdlLocation=Math.floor(Math.random()*25);
+         
+       }
   function locationScore (pos1, pos2)
   {
     var row1, row2, col1, col2
@@ -122,5 +129,10 @@
          return 0
 
        }
+       function reset(){
+            shakeCount = 0;
+            document.getElementById("shakes").innerHTML = "Number of shakes is " + shakeCount;
+            birdLocation = Math.floor(Math.random() * 25);
+        }
 </script>
 </html>

@@ -4,12 +4,10 @@
       display: flex;  flex-direction:row;
       background-color: red;
   }
-
 .flex-container > div {  /*div children of the flex container*/
   background-color: #f1f1f1; 
   margin: 10px;  padding: 20px;  font-size: 30px;
 }
-
 /* Responsive layout */
 @media (max-width: 600px) { 
 	 .flex-container{
@@ -18,9 +16,7 @@
 	  }
 	}
 </style>
-<title>
-    Queue.html page
-</title>
+<title>Queue.html page</title>
 </head>
 <body>
     <h1>Sravani Jakkula builds a reversed queue</h1>
@@ -29,16 +25,12 @@
         <div class="queue">row item 2</div>
         <div class="queue">row item 3</div>
     </div>
-
-    <p> Press the button to create an new element of type div and then add it to the container.</p>
-    <br>
+<p> Press the button to create an new element of type div and then add it to the container.</p><br>
     <input type="text" id="form_text" name="form_text">
     <button onclick="makeNewDiv()"> Add value </button>
     <br> <br>
     <button onclick="fetchItem()"> Fetch</button>
     <button onclick="zap()"> Zap values</button>
-
-
 </body>
 <script>
     function makeNewDiv() {
@@ -46,12 +38,10 @@
         element.innerHTML = document.getElementById("form_text").value;
         element.setAttribute('class', 'queue');
         element.style.color = "Black"
-
         /* add it to the container */
         let container = document.getElementById('target')
         container.insertBefore(element, container.firstChild);
     }
-
     function fetchItem() {
         queueItems = document.getElementsByClassName('queue');
         var len = queueItems.length;
@@ -61,7 +51,6 @@
             }
         }
     }
-
     function zap() {
         var queueItems = document.getElementsByClassName("queue")
         var len = queueItems.length;
@@ -70,6 +59,30 @@
             if (item == queueItems[i].innerHTML) {
                 queueItems[i].remove();
                 console.log(" getting rid of all the elements with that text");
+            }
+        }
+    }
+    function unique() {
+        queueItems = document.getElementsByClassName('queue');
+        var len = queueItems.length
+        for (let i = 0; i < len; i++) {
+            for (let j = i + 1; j < len - 1; j++) {
+                if (queueItems[i].innerHTML == queueItems[j].innerHTML) {
+                    queueItems[j].remove();
+                    
+                }
+            }
+        }
+    }
+    function unique() {
+        queueItems = document.getElementsByClassName('queue');
+        var length = queueItems.length
+        for (let i = 0; i < len; i++) {
+            for (let j = i + 1; j < length - 1; j++) {
+                if (queueItems[i].innerHTML == queueItems[j].innerHTML) {
+                    queueItems[j].remove();
+                    
+                }
             }
         }
     }
